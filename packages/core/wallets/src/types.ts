@@ -1,9 +1,9 @@
 import { MessageSignerWalletAdapter, SignerWalletAdapter, WalletAdapter } from '@solana/wallet-adapter-base';
 
 export enum WalletName {
-    Bitpie = 'Bitpie',
+    // Bitpie = 'Bitpie', // not published yet
     Blocto = 'Blocto',
-    // Clover = 'Clover',
+    // Clover = 'Clover', // not published yet
     Coin98 = 'Coin98',
     Ledger = 'Ledger',
     MathWallet = 'MathWallet',
@@ -17,7 +17,7 @@ export enum WalletName {
     Solong = 'Solong',
     TokenPocket = 'TokenPocket',
     Torus = 'Torus',
-    // WalletConnect = 'WalletConnect',
+    // WalletConnect = 'WalletConnect', // not published yet
 }
 
 export interface Wallet {
