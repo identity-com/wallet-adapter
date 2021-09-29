@@ -1,5 +1,5 @@
-import { useWallet } from '@solana/wallet-adapter-react';
-import { WalletName } from '@solana/wallet-adapter-wallets';
+import { useWallet } from '@identity.com/wallet-adapter-react';
+import { WalletName } from '@identity.com/wallet-adapter-wallets';
 import { Menu, Modal, ModalProps } from 'antd';
 import React, { FC, MouseEvent, useCallback, useMemo, useState } from 'react';
 import { useWalletModal } from './useWalletModal';

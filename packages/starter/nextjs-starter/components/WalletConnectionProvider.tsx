@@ -1,5 +1,5 @@
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
 import {
     getLedgerWallet,
     getPhantomWallet,
@@ -8,7 +8,7 @@ import {
     getSolletWallet,
     getSolletExtensionWallet,
     getTorusWallet,
-} from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { FC, useMemo } from 'react';
 

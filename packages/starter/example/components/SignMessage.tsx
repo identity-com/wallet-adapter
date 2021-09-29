@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useWallet } from '@identity.com/wallet-adapter-react';
 import bs58 from 'bs58';
 import { FC, useCallback } from 'react';
 import { useNotify } from './notify';

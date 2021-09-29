@@ -26,9 +26,9 @@
     },
     "dependencies": {
         "@solana/wallet-adapter-base": "^0.6.0",
-        "@solana/wallet-adapter-react": "^0.12.3",
+        "@identity.com/wallet-adapter-react": "^0.12.3",
         "@solana/wallet-adapter-react-ui": "^0.5.0",
-        "@solana/wallet-adapter-wallets": "^0.10.0",
+        "@identity.com/wallet-adapter-wallets": "^0.10.0",
         "@solana/web3.js": "^1.20.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",

@@ -1,5 +1,5 @@
 import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import {
     getLedgerWallet,
@@ -10,7 +10,7 @@ import {
     getSolletExtensionWallet,
     getTorusWallet,
     getCryptidWallet,
-} from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import React, { FC, useCallback, useMemo } from 'react';
 import toast, { Toaster } from 'react-hot-toast';

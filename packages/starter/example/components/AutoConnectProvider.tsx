@@ -1,4 +1,4 @@
-import { useLocalStorage } from '@solana/wallet-adapter-react';
+import { useLocalStorage } from '@identity.com/wallet-adapter-react';
 import { createContext, FC, useContext } from 'react';
 
 export interface AutoConnectContextState {

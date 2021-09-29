@@ -6,7 +6,7 @@ import {
     WalletNotConnectedError,
     WalletNotReadyError,
 } from '@solana/wallet-adapter-base';
-import { Wallet, WalletName } from '@solana/wallet-adapter-wallets';
+import { Wallet, WalletName } from '@identity.com/wallet-adapter-wallets';
 import { Connection, Transaction } from '@solana/web3.js';
 import { combineLatest, defer, EMPTY, from, Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, concatMap, filter, finalize, first, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
