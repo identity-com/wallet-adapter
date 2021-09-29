@@ -1,4 +1,4 @@
-import { CryptidWalletAdapter, CryptidWalletAdapterConfig } from '@solana/wallet-adapter-cryptid';
+import { CryptidWalletAdapter, CryptidWalletAdapterConfig } from '@identity.com/wallet-adapter-cryptid';
 import { Wallet, WalletName } from './types';
 
 export const getCryptidWallet = (config: CryptidWalletAdapterConfig = {}): Wallet => ({

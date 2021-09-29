@@ -1,5 +1,5 @@
 {
-    "name": "@solana/wallet-adapter-cryptid",
+    "name": "@identity.com/wallet-adapter-cryptid",
     "version": "0.7.0",
     "author": "identity.com <dev@identity.com>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
