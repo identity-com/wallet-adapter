@@ -1,6 +1,6 @@
 {
     "name": "@identity.com/wallet-adapter-cryptid",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "author": "identity.com <dev@identity.com>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
