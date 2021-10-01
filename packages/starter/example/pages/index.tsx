@@ -12,7 +12,7 @@ import {
     WalletDialogProvider as MaterialUIWalletDialogProvider,
     WalletDisconnectButton as MaterialUIWalletDisconnectButton,
     WalletMultiButton as MaterialUIWalletMultiButton,
-} from '@solana/wallet-adapter-material-ui';
+} from '@identity.com/wallet-adapter-material-ui';
 import {
     WalletConnectButton as ReactUIWalletConnectButton,
     WalletDisconnectButton as ReactUIWalletDisconnectButton,

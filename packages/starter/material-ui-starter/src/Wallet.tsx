@@ -1,5 +1,5 @@
 import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
-import { WalletDialogProvider } from '@solana/wallet-adapter-material-ui';
+import { WalletDialogProvider } from '@identity.com/wallet-adapter-material-ui';
 import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
 import {
     getLedgerWallet,

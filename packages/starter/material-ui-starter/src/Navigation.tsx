@@ -1,6 +1,6 @@
 import { Toolbar, Typography } from '@material-ui/core';
 import DisconnectIcon from '@material-ui/icons/LinkOff';
-import { WalletDisconnectButton, WalletMultiButton } from '@solana/wallet-adapter-material-ui';
+import { WalletDisconnectButton, WalletMultiButton } from '@identity.com/wallet-adapter-material-ui';
 import { useWallet } from '@identity.com/wallet-adapter-react';
 import React, { FC } from 'react';
 
