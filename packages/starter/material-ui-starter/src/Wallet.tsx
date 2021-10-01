@@ -14,6 +14,7 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { useSnackbar } from 'notistack';
 import React, { FC, useCallback, useMemo } from 'react';
 import Navigation from './Navigation';
+import { SendOneLamportToRandomAddress } from './SendRandom';
 
 const Wallet: FC = () => {
     const network = WalletAdapterNetwork.Devnet;
@@ -51,6 +52,7 @@ const Wallet: FC = () => {
             <WalletProvider wallets={wallets} onError={onError} autoConnect>
                 <WalletDialogProvider>
                     <Navigation />
+                    <SendOneLamportToRandomAddress />
                 </WalletDialogProvider>
             </WalletProvider>
         </ConnectionProvider>
