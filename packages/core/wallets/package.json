@@ -1,6 +1,6 @@
 {
     "name": "@identity.com/wallet-adapter-wallets",
-    "version": "0.10.1",
+    "version": "0.10.2",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
