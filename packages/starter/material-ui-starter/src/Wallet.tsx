@@ -17,8 +17,10 @@ import Navigation from './Navigation';
 import { SendOneLamportToRandomAddress } from './SendRandom';
 
 const Wallet: FC = () => {
-    const network = WalletAdapterNetwork.Devnet;
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    // const network = WalletAdapterNetwork.Devnet;
+    const network = 'localnet' as WalletAdapterNetwork
+    // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const endpoint = 'http://localhost:8899'
 
     // @solana/wallet-adapter-wallets imports all the adapters but supports tree shaking --
     // Only the wallets you want to support will be compiled into your application
