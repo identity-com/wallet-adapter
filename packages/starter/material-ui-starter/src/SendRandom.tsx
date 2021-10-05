@@ -6,7 +6,7 @@ import { useSnackbar } from 'notistack';
 
 export const SendOneLamportToRandomAddress: FC = () => {
     const { connection } = useConnection();
-    const { publicKey, sendTransaction } = useWallet();
+    const { publicKey, sendTransaction, signAllTransactions } = useWallet();
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -21,8 +21,17 @@ export const SendOneLamportToRandomAddress: FC = () => {
             })
         );
 
+        transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash
+        transaction.feePayer = publicKey
+
         try {
             enqueueSnackbar('Sending Transaction....')
+
+            // Test bulk TX Signing.
+            // if (signAllTransactions) {
+            //     const signedTxs = await signAllTransactions([transaction]);
+            //     console.log('Signed all txes!')
+            // }
 
             const signature = await sendTransaction(transaction, connection);
             enqueueSnackbar('Confirming Transaction....')
