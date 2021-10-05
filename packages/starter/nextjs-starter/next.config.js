@@ -20,7 +20,7 @@ const withTM = require('next-transpile-modules')([
     '@solana/wallet-adapter-safepal',
     '@solana/wallet-adapter-slope',
     '@solana/wallet-adapter-solflare',
-    '@solana/wallet-adapter-sollet',
+    '@identity.com/wallet-adapter-sollet',
     '@solana/wallet-adapter-solong',
     '@solana/wallet-adapter-torus',
     '@solana/wallet-adapter-walletconnect',

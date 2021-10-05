@@ -9,6 +9,7 @@ import {
     getSolletWallet,
     getSolletExtensionWallet,
     getTorusWallet,
+    getCryptidWallet,
 } from '@identity.com/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { useSnackbar } from 'notistack';
@@ -23,6 +24,7 @@ const Wallet: FC = () => {
     // Only the wallets you want to support will be compiled into your application
     const wallets = useMemo(
         () => [
+            getCryptidWallet({ network }),
             getPhantomWallet(),
             getSlopeWallet(),
             getSolflareWallet(),
