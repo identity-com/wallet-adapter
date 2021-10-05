@@ -8,7 +8,7 @@ export const SendOneLamportToRandomAddress: FC = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction, signAllTransactions } = useWallet();
 
-    const { enqueueSnackbar } = useSnackbar();
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const onClick = useCallback(async () => {
         if (!publicKey) throw new WalletNotConnectedError();
@@ -18,28 +18,70 @@ export const SendOneLamportToRandomAddress: FC = () => {
                 fromPubkey: publicKey,
                 toPubkey: Keypair.generate().publicKey,
                 lamports: 1,
+            }),
+            SystemProgram.transfer({
+                fromPubkey: publicKey,
+                toPubkey: Keypair.generate().publicKey,
+                lamports: 1,
             })
         );
 
-        transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash
-        transaction.feePayer = publicKey
+        const transaction2 = new Transaction().add(
+            SystemProgram.transfer({
+                fromPubkey: publicKey,
+                toPubkey: Keypair.generate().publicKey,
+                lamports: 1,
+            }),
+            SystemProgram.transfer({
+                fromPubkey: publicKey,
+                toPubkey: Keypair.generate().publicKey,
+                lamports: 1,
+            })
+        );
+
+        transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash;
+        transaction2.recentBlockhash = transaction.recentBlockhash;
+        transaction.feePayer = publicKey;
+        transaction2.feePayer = publicKey;
 
         try {
-            enqueueSnackbar('Sending Transaction....')
+            enqueueSnackbar('Sending Transaction....');
 
             // Test bulk TX Signing.
-            // if (signAllTransactions) {
-            //     const signedTxs = await signAllTransactions([transaction]);
-            //     console.log('Signed all txes!')
-            // }
+            if (signAllTransactions) {
+                const signedTxs = await signAllTransactions([transaction, transaction2]);
+                enqueueSnackbar('Signed all transactions!');
 
-            const signature = await sendTransaction(transaction, connection);
-            enqueueSnackbar('Confirming Transaction....')
+                await Promise.all(signedTxs.map(async (transaction, i) => {
+                    const send = enqueueSnackbar(`Sending transaction ${i}`);
+                    const signature = await connection.sendRawTransaction(transaction.serialize());
+                    closeSnackbar(send);
 
-            await connection.confirmTransaction(signature, 'processed');
-            enqueueSnackbar('Transaction confirmed!', { variant: 'success' })
+                    const confirm = enqueueSnackbar(`Confirming transaction ${i}`);
+                    await connection.confirmTransaction(signature, 'processed');
+                    closeSnackbar(confirm);
+
+                    enqueueSnackbar(`Transaction ${i} confirmed!`, { variant: 'success' });
+                }))
+            }
+            else{
+                const signature = await sendTransaction(transaction, connection);
+                const confirm = enqueueSnackbar('Confirming Transaction 1....');
+
+                await connection.confirmTransaction(signature, 'processed');
+                closeSnackbar(confirm);
+                enqueueSnackbar('Transaction 1 confirmed!', { variant: 'success' });
+
+                const signature2 = await sendTransaction(transaction2, connection);
+                const confirm2 = enqueueSnackbar('Confirming Transaction 2....');
+
+                await connection.confirmTransaction(signature2, 'processed');
+                closeSnackbar(confirm2);
+                enqueueSnackbar('Transaction 2 confirmed!', { variant: 'success' });
+            }
         } catch (e) {
             enqueueSnackbar((e as Error).message, { variant: 'error' });
+            console.error(e);
         }
     }, [publicKey, sendTransaction, connection]);
 
