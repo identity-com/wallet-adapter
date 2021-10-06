@@ -6,9 +6,9 @@ import { useSnackbar } from 'notistack';
 
 export const SendOneLamportToRandomAddress: FC = () => {
     const { connection } = useConnection();
-    const { publicKey, sendTransaction, signAllTransactions } = useWallet();
+    const { publicKey, sendTransaction } = useWallet();
 
-    const { enqueueSnackbar } = useSnackbar();
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const onClick = useCallback(async () => {
         if (!publicKey) throw new WalletNotConnectedError();
@@ -23,6 +23,8 @@ export const SendOneLamportToRandomAddress: FC = () => {
 
         transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash
         transaction.feePayer = publicKey
+
+        console.log(await connection.getEpochInfo('recent'));
 
         try {
             enqueueSnackbar('Sending Transaction....')
@@ -40,12 +42,41 @@ export const SendOneLamportToRandomAddress: FC = () => {
             enqueueSnackbar('Transaction confirmed!', { variant: 'success' })
         } catch (e) {
             enqueueSnackbar((e as Error).message, { variant: 'error' });
+            console.error(e);
         }
-    }, [publicKey, sendTransaction, connection]);
+    }, [publicKey, sendTransaction, connection, enqueueSnackbar]);
+
+    const onFailingClick = useCallback(async () => {
+        if (!publicKey) throw new WalletNotConnectedError();
+
+        const transaction = new Transaction();
+        const newAccount = Keypair.generate();
+        const program = Keypair.generate().publicKey;
+        transaction.add(SystemProgram.createAccount({ fromPubkey: publicKey, lamports: 100, space: 0, programId: program, newAccountPubkey: newAccount.publicKey}));
+        transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash;
+
+        enqueueSnackbar(`Creating account \`${newAccount.publicKey.toBase58()}\` with 100 lamports and assigning to \`${program.toBase58()}\``)
+        try {
+            const signature = await sendTransaction(transaction, connection, {signers: [newAccount]})
+            const confirm = enqueueSnackbar('Confirming transaction...');
+
+            await connection.confirmTransaction(signature, 'processed');
+            closeSnackbar(confirm);
+            enqueueSnackbar('Transaction confirmed!', { variant: 'success' });
+        } catch (e) {
+            enqueueSnackbar((e as Error).message, { variant: 'error' });
+            console.error(e);
+        }
+    }, [publicKey, sendTransaction, connection, enqueueSnackbar, closeSnackbar]);
 
     return (
-        <button onClick={onClick} disabled={!publicKey}>
-            Send 1 lamport to a random address!
-        </button>
+        <React.Fragment>
+            <button onClick={onClick} disabled={!publicKey}>
+                Send 1 lamport to a random address!
+            </button>
+            <button onClick={onFailingClick} disabled={!publicKey}>
+                Failing transaction that will succeed when fixed!
+            </button>
+        </React.Fragment>
     );
 };
