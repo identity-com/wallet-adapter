@@ -8,21 +8,25 @@ import {
     getSolflareWallet,
     getSolletWallet,
     getSolletExtensionWallet,
-    getTorusWallet,
+    getTorusWallet, getCryptidWallet,
 } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { useSnackbar } from 'notistack';
 import React, { FC, useCallback, useMemo } from 'react';
 import Navigation from './Navigation';
+import { SendOneLamportToRandomAddress } from './SendRandom';
 
 const Wallet: FC = () => {
-    const network = WalletAdapterNetwork.Devnet;
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    // const network = WalletAdapterNetwork.Devnet;
+    const network = 'localnet' as WalletAdapterNetwork
+    // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const endpoint = 'http://localhost:8899'
 
     // @solana/wallet-adapter-wallets imports all the adapters but supports tree shaking --
     // Only the wallets you want to support will be compiled into your application
     const wallets = useMemo(
         () => [
+            getCryptidWallet({ network }),
             getPhantomWallet(),
             getSlopeWallet(),
             getSolflareWallet(),
@@ -50,6 +54,7 @@ const Wallet: FC = () => {
             <WalletProvider wallets={wallets} onError={onError} autoConnect>
                 <WalletDialogProvider>
                     <Navigation />
+                    <SendOneLamportToRandomAddress />
                 </WalletDialogProvider>
             </WalletProvider>
         </ConnectionProvider>
