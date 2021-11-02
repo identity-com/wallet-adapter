@@ -1,6 +1,6 @@
 {
-    "name": "@solana/wallet-adapter-react-ui",
-    "version": "0.5.0",
+    "name": "@identity.com/wallet-adapter-react-ui",
+    "version": "0.5.3",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
@@ -21,17 +21,17 @@
         "build": "yarn clean && tsc"
     },
     "peerDependencies": {
-        "@solana/wallet-adapter-base": "^0.6.0",
-        "@solana/wallet-adapter-react": "^0.12.3",
-        "@solana/wallet-adapter-wallets": "^0.10.0",
+        "@identity.com/wallet-adapter-base": "^0.6.2",
+        "@identity.com/wallet-adapter-react": "^0.12.9",
+        "@identity.com/wallet-adapter-wallets": "^0.10.9",
         "@solana/web3.js": "^1.20.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
     "devDependencies": {
-        "@solana/wallet-adapter-base": "^0.6.0",
-        "@solana/wallet-adapter-react": "^0.12.3",
-        "@solana/wallet-adapter-wallets": "^0.10.0",
+        "@identity.com/wallet-adapter-base": "^0.6.2",
+        "@identity.com/wallet-adapter-react": "^0.12.9",
+        "@identity.com/wallet-adapter-wallets": "^0.10.9",
         "@solana/web3.js": "^1.20.0",
         "@types/react": "^17.0.24",
         "react": "^17.0.2",

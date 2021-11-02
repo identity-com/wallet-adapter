@@ -1,6 +1,6 @@
 {
-    "name": "@solana/wallet-adapter-wallets",
-    "version": "0.10.0",
+    "name": "@identity.com/wallet-adapter-wallets",
+    "version": "0.10.9",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
@@ -20,7 +20,7 @@
         "build": "yarn clean && tsc"
     },
     "peerDependencies": {
-        "@solana/wallet-adapter-base": "^0.6.0"
+        "@identity.com/wallet-adapter-base": "^0.6.2"
     },
     "dependencies": {
         "@solana/wallet-adapter-bitpie": "^0.2.0",
@@ -37,6 +37,6 @@
         "@solana/wallet-adapter-torus": "^0.7.0"
     },
     "devDependencies": {
-        "@solana/wallet-adapter-base": "^0.6.0"
+        "@identity.com/wallet-adapter-base": "^0.6.2"
     }
 }
