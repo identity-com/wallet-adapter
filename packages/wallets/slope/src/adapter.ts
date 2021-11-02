@@ -9,7 +9,7 @@ import {
     WalletNotFoundError,
     WalletPublicKeyError,
     WalletSignTransactionError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { PublicKey, Transaction } from '@solana/web3.js';
 import bs58 from 'bs58';
 

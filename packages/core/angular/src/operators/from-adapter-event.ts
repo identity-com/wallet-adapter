@@ -1,4 +1,4 @@
-import { WalletAdapter, WalletAdapterEvents } from '@solana/wallet-adapter-base';
+import { WalletAdapter, WalletAdapterEvents } from '@identity.com/wallet-adapter-base';
 import { fromEventPattern, Observable } from 'rxjs';
 
 export const fromAdapterEvent = <T>(adapter: WalletAdapter, eventName: keyof WalletAdapterEvents): Observable<T> =>

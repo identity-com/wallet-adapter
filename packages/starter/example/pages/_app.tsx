@@ -6,7 +6,7 @@ import { ReactElement } from 'react';
 // Use require instead of import, and order matters
 require('antd/dist/antd.dark.less');
 require('@solana/wallet-adapter-ant-design/styles.css');
-require('@solana/wallet-adapter-react-ui/styles.css');
+require('@identity.com/wallet-adapter-react-ui/styles.css');
 require('../styles/globals.css');
 
 const ContextProvider = dynamic(() => import('../components/ContextProvider'), {

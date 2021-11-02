@@ -9,7 +9,7 @@ import {
     WalletPublicKeyError,
     WalletSignTransactionError,
     WalletWindowClosedError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { PublicKey, Transaction } from '@solana/web3.js';
 import WalletConnectClient, { CLIENT_EVENTS } from '@walletconnect/client';
 import QRCodeModal from '@walletconnect/qrcode-modal';

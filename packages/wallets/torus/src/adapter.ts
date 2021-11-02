@@ -8,7 +8,7 @@ import {
     WalletSignTransactionError,
     WalletWindowBlockedError,
     WalletWindowClosedError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { Keypair, PublicKey, Transaction } from '@solana/web3.js';
 import OpenLogin, { OPENLOGIN_NETWORK, OpenLoginOptions } from '@toruslabs/openlogin';
 import { getED25519Key } from '@toruslabs/openlogin-ed25519';

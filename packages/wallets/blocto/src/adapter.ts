@@ -11,7 +11,7 @@ import {
     WalletNotFoundError,
     WalletPublicKeyError,
     WalletSendTransactionError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { Connection, PublicKey, Transaction, TransactionSignature } from '@solana/web3.js';
 
 export interface BloctoWalletAdapterConfig {

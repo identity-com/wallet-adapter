@@ -37,10 +37,10 @@ yarn add antd \
 4. Install these dependencies:
 
 ```
-yarn add @solana/wallet-adapter-wallets \
-         @solana/wallet-adapter-react \
+yarn add @identity.com/wallet-adapter-wallets \
+         @identity.com/wallet-adapter-react \
          @solana/wallet-adapter-ant-design \
-         @solana/wallet-adapter-base
+         @identity.com/wallet-adapter-base
 ```
 
 

@@ -1,4 +1,4 @@
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useWallet } from '@identity.com/wallet-adapter-react';
 import React, { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Button, ButtonProps } from './Button';
 import { useWalletModal } from './useWalletModal';

@@ -1,4 +1,4 @@
-import { Wallet, WalletName } from '@solana/wallet-adapter-wallets';
+import { Wallet, WalletName } from '@identity.com/wallet-adapter-wallets';
 import { PublicKey } from '@solana/web3.js';
 
 export interface WalletState {

@@ -33,10 +33,10 @@ There are also [material-ui](https://github.com/solana-labs/wallet-adapter/tree/
 Install these dependencies:
 
 ```shell
-yarn add @solana/wallet-adapter-wallets \
-         @solana/wallet-adapter-base \
-         @solana/wallet-adapter-react \
-         @solana/wallet-adapter-react-ui \
+yarn add @identity.com/wallet-adapter-wallets \
+         @identity.com/wallet-adapter-base \
+         @identity.com/wallet-adapter-react \
+         @identity.com/wallet-adapter-react-ui \
          @solana/web3.js \
          react
 ```
@@ -45,8 +45,8 @@ yarn add @solana/wallet-adapter-wallets \
 
 ```tsx
 import React, { FC, useMemo } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@identity.com/wallet-adapter-base';
 import {
     getLedgerWallet,
     getPhantomWallet,
@@ -55,16 +55,16 @@ import {
     getSolletExtensionWallet,
     getSolletWallet,
     getTorusWallet,
-} from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-wallets';
 import {
     WalletModalProvider,
     WalletDisconnectButton,
     WalletMultiButton
-} from '@solana/wallet-adapter-react-ui';
+} from '@identity.com/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 
 // Default styles that can be overridden by your app
-require('@solana/wallet-adapter-react-ui/styles.css');
+require('@identity.com/wallet-adapter-react-ui/styles.css');
 
 export const Wallet: FC = () => {
     // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
@@ -73,7 +73,7 @@ export const Wallet: FC = () => {
     // You can also provide a custom RPC endpoint
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking --
+    // @identity.com/wallet-adapter-wallets includes all the adapters but supports tree shaking --
     // Only the wallets you configure here will be compiled into your application
     const wallets = useMemo(() => [
         getPhantomWallet(),
@@ -122,8 +122,8 @@ _Modal logo example_
 ### Usage
 
 ```tsx
-import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
-import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { WalletNotConnectedError } from '@identity.com/wallet-adapter-base';
+import { useConnection, useWallet } from '@identity.com/wallet-adapter-react';
 import { Keypair, SystemProgram, Transaction } from '@solana/web3.js';
 import React, { FC, useCallback } from 'react';
 
@@ -164,9 +164,9 @@ These packages are what most projects can use to support wallets on Solana.
 
 | package                                                                                       | description                                           | npm                                                                                              |
 | --------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [wallets](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/wallets)    | All wallets with icons                                | [`@solana/wallet-adapter-wallets`](https://www.npmjs.com/package/@solana/wallet-adapter-wallets) |
-| [base](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/base)          | Adapter interfaces, error types, and common utilities | [`@solana/wallet-adapter-base`](https://www.npmjs.com/package/@solana/wallet-adapter-base)       |
-| [react](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/react)        | Contexts and hooks for React dApps                    | [`@solana/wallet-adapter-react`](https://www.npmjs.com/package/@solana/wallet-adapter-react)     |
+| [wallets](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/wallets)    | All wallets with icons                                | [`@identity.com/wallet-adapter-wallets`](https://www.npmjs.com/package/@identity.com/wallet-adapter-wallets) |
+| [base](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/base)          | Adapter interfaces, error types, and common utilities | [`@identity.com/wallet-adapter-base`](https://www.npmjs.com/package/@identity.com/wallet-adapter-base)       |
+| [react](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/react)        | Contexts and hooks for React dApps                    | [`@identity.com/wallet-adapter-react`](https://www.npmjs.com/package/@identity.com/wallet-adapter-react)     |
 | [angular](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/angular) \* | Stores and configuration for Angular dApps            | [`@solana/wallet-adapter-angular`](https://www.npmjs.com/package/@solana/wallet-adapter-angular) |
 
 \* Package has not been published to NPM yet.
@@ -178,7 +178,7 @@ These packages provide components for common UI frameworks.
 | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [material-ui](https://github.com/solana-labs/wallet-adapter/tree/master/packages/ui/material-ui) | Components for [Material UI](https://material-ui.com) | [`@solana/wallet-adapter-material-ui`](https://www.npmjs.com/package/@solana/wallet-adapter-material-ui) |
 | [ant-design](https://github.com/solana-labs/wallet-adapter/tree/master/packages/ui/ant-design)   | Components for [Ant Design](https://ant.design)       | [`@solana/wallet-adapter-ant-design`](https://www.npmjs.com/package/@solana/wallet-adapter-ant-design)   |
-| [react-ui](https://github.com/solana-labs/wallet-adapter/tree/master/packages/ui/react-ui)       | Components for React (no UI framework, just CSS)      | [`@solana/wallet-adapter-react-ui`](https://www.npmjs.com/package/@solana/wallet-adapter-react-ui)       |
+| [react-ui](https://github.com/solana-labs/wallet-adapter/tree/master/packages/ui/react-ui)       | Components for React (no UI framework, just CSS)      | [`@identity.com/wallet-adapter-react-ui`](https://www.npmjs.com/package/@identity.com/wallet-adapter-react-ui)       |
 
 ### Starter Projects
 These packages provide projects that you can use to start building a dApp with built-in wallet support.
@@ -188,7 +188,7 @@ Alternatively, check out [dapp-scaffold](https://github.com/solana-labs/dapp-sca
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | [example](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter/example)                         | Demo of UI components                                                      | [`@solana/wallet-adapter-example`](https://www.npmjs.com/package/@solana/wallet-adapter-example)                         |
 | [material-ui-starter](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter/material-ui-starter) | [Create React App](https://create-react-app.dev) project using Material UI | [`@solana/wallet-adapter-material-ui-starter`](https://www.npmjs.com/package/@solana/wallet-adapter-material-ui-starter) |
-| [react-ui-starter](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter/react-ui-starter)       | [Create React App](https://create-react-app.dev) project using React UI    | [`@solana/wallet-adapter-react-ui-starter`](https://www.npmjs.com/package/@solana/wallet-adapter-react-ui-starter)       |
+| [react-ui-starter](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter/react-ui-starter)       | [Create React App](https://create-react-app.dev) project using React UI    | [`@identity.com/wallet-adapter-react-ui-starter`](https://www.npmjs.com/package/@identity.com/wallet-adapter-react-ui-starter)       |
 | [nextjs-starter](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter/nextjs-starter)           | [Next.js](https://nextjs.org) project using React                          | [`@solana/wallet-adapter-nextjs-starter`](https://www.npmjs.com/package/@solana/wallet-adapter-nextjs-starter)           |
 
 ### Wallets

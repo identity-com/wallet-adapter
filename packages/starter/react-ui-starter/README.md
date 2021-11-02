@@ -1,4 +1,4 @@
-# `@solana/wallet-adapter-react-ui-starter`
+# `@identity.com/wallet-adapter-react-ui-starter`
 
 <!-- @TODO -->
 

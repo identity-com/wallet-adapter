@@ -6,7 +6,7 @@
         "umdModuleIds": {
             "@ngrx/component-store": "@ngrx/component-store",
             "@solana/web3.js": "@solana/web3.js",
-            "@solana/wallet-adapter-base": "@solana/wallet-adapter-base"
+            "@identity.com/wallet-adapter-base": "@identity.com/wallet-adapter-base"
         }
     }
 }

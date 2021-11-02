@@ -19,7 +19,7 @@ import {
     WalletModalButton as ReactUIWalletModalButton,
     WalletModalProvider as ReactUIWalletModalProvider,
     WalletMultiButton as ReactUIWalletMultiButton,
-} from '@solana/wallet-adapter-react-ui';
+} from '@identity.com/wallet-adapter-react-ui';
 import { NextPage } from 'next';
 import pkg from '../package.json';
 import { useAutoConnect } from '../components/AutoConnectProvider';

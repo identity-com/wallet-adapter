@@ -1,4 +1,4 @@
-# `@solana/wallet-adapter-wallets`
+# `@identity.com/wallet-adapter-wallets`
 
 <!-- @TODO -->
 

@@ -121,7 +121,7 @@ The signature string returned by this method can be verified using [tweetnacl-js
 This can be used to sign offline -- without sending a transaction -- and prove a user controls a given private key.
 
 ```tsx
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useWallet } from '@identity.com/wallet-adapter-react';
 import bs58 from 'bs58';
 import React, { FC, useCallback } from 'react';
 import { sign } from 'tweetnacl';

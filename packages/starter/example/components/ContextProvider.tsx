@@ -1,8 +1,8 @@
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import pink from '@material-ui/core/colors/pink';
-import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletAdapterNetwork, WalletError } from '@identity.com/wallet-adapter-base';
+import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
 import {
     getCryptidWallet,
     getLedgerWallet,
@@ -12,7 +12,7 @@ import {
     getSolletExtensionWallet,
     getSolletWallet,
     getTorusWallet,
-} from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { SnackbarProvider, useSnackbar } from 'notistack';
 import { FC, useCallback, useMemo } from 'react';

@@ -4,8 +4,8 @@ import {
     WalletError,
     WalletNotConnectedError,
     WalletNotReadyError,
-} from '@solana/wallet-adapter-base';
-import { Wallet, WalletName } from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-base';
+import { Wallet, WalletName } from '@identity.com/wallet-adapter-wallets';
 import { Connection, Transaction } from '@solana/web3.js';
 import React, { FC, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { WalletNotSelectedError } from './errors';

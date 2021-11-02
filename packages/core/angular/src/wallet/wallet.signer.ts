@@ -1,4 +1,4 @@
-import { MessageSignerWalletAdapter, SignerWalletAdapter, WalletNotConnectedError } from '@solana/wallet-adapter-base';
+import { MessageSignerWalletAdapter, SignerWalletAdapter, WalletNotConnectedError } from '@identity.com/wallet-adapter-base';
 import { Transaction } from '@solana/web3.js';
 import { defer, from, Observable, Subject, throwError } from 'rxjs';
 

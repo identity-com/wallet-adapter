@@ -1,5 +1,5 @@
 import { Button, ListItem, ListItemProps } from '@material-ui/core';
-import { Wallet } from '@solana/wallet-adapter-wallets';
+import { Wallet } from '@identity.com/wallet-adapter-wallets';
 import React, { FC, MouseEventHandler } from 'react';
 import { WalletIcon } from './WalletIcon';
 

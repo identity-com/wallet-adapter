@@ -2,8 +2,8 @@ import {
     MessageSignerWalletAdapterProps,
     SignerWalletAdapterProps,
     WalletAdapterProps,
-} from '@solana/wallet-adapter-base';
-import { Wallet, WalletName } from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-base';
+import { Wallet, WalletName } from '@identity.com/wallet-adapter-wallets';
 import { createContext, useContext } from 'react';
 
 export interface WalletContextState extends WalletAdapterProps {

@@ -1,4 +1,4 @@
-import { Wallet } from '@solana/wallet-adapter-wallets';
+import { Wallet } from '@identity.com/wallet-adapter-wallets';
 import React, { FC, MouseEventHandler } from 'react';
 import { Button } from './Button';
 import { WalletIcon } from './WalletIcon';

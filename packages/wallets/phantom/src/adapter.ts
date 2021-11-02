@@ -13,7 +13,7 @@ import {
     WalletPublicKeyError,
     WalletSignTransactionError,
     WalletWindowClosedError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { PublicKey, Transaction } from '@solana/web3.js';
 
 interface PhantomWalletEvents {

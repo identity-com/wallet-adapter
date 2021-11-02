@@ -8,7 +8,7 @@ import {
     WalletNotConnectedError,
     WalletPublicKeyError,
     WalletSignTransactionError,
-} from '@solana/wallet-adapter-base';
+} from '@identity.com/wallet-adapter-base';
 import { PublicKey, Transaction } from '@solana/web3.js';
 import { getDerivationPath, getPublicKey, signTransaction } from './util';
 

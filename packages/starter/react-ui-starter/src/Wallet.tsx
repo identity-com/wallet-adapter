@@ -1,6 +1,6 @@
-import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { WalletAdapterNetwork, WalletError } from '@identity.com/wallet-adapter-base';
+import { ConnectionProvider, WalletProvider } from '@identity.com/wallet-adapter-react';
+import { WalletModalProvider } from '@identity.com/wallet-adapter-react-ui';
 import {
     getLedgerWallet,
     getPhantomWallet,
@@ -10,7 +10,7 @@ import {
     getSolletExtensionWallet,
     getTorusWallet,
     getCryptidWallet,
-} from '@solana/wallet-adapter-wallets';
+} from '@identity.com/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import React, { FC, useCallback, useMemo } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -21,7 +21,7 @@ const Wallet: FC = () => {
     const network = WalletAdapterNetwork.Devnet;
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    // @solana/wallet-adapter-wallets imports all the adapters but supports tree shaking --
+    // @identity.com/wallet-adapter-wallets imports all the adapters but supports tree shaking --
     // Only the wallets you want to support will be compiled into your application
     const wallets = useMemo(
         () => [

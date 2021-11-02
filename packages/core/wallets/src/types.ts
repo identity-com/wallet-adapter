@@ -1,4 +1,4 @@
-import { MessageSignerWalletAdapter, SignerWalletAdapter, WalletAdapter } from '@solana/wallet-adapter-base';
+import { MessageSignerWalletAdapter, SignerWalletAdapter, WalletAdapter } from '@identity.com/wallet-adapter-base';
 
 export enum WalletName {
     // BitKeep = 'BitKeep', // not published yet
