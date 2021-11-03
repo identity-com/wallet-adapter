@@ -2,7 +2,7 @@ import { SolletWalletAdapter, SolletWalletAdapterConfig } from '@solana/wallet-a
 import { Wallet, WalletName } from './types';
 
 const CRYPTID_URL = 'https://cryptid.identity.com'
-// const CRYPTID_URL = 'http://localhost:3000'
+// const CRYPTID_URL = 'http://localhost:3001'
 
 export const getCryptidWallet = ({ provider, ...config }: SolletWalletAdapterConfig = {}): Wallet => ({
     name: WalletName.Cryptid,
