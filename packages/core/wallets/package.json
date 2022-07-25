@@ -1,6 +1,6 @@
 {
     "name": "@identity.com/wallet-adapter-wallets",
-    "version": "0.10.12",
+    "version": "0.10.13",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
@@ -23,7 +23,7 @@
         "@identity.com/wallet-adapter-base": "^0.6.2"
     },
     "dependencies": {
-        "@identity.com/wallet-adapter-sollet": "^0.7.3",
+        "@identity.com/wallet-adapter-sollet": "^0.7.4",
         "@solana/wallet-adapter-bitpie": "^0.2.0",
         "@solana/wallet-adapter-blocto": "^0.2.0",
         "@solana/wallet-adapter-coin98": "^0.2.0",

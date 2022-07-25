@@ -1,6 +1,6 @@
 {
     "name": "@identity.com/wallet-adapter-sollet",
-    "version": "0.7.3",
+    "version": "0.7.4",
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/wallet-adapter",
     "license": "Apache-2.0",
@@ -24,7 +24,7 @@
         "@solana/web3.js": "^1.20.0"
     },
     "dependencies": {
-        "@project-serum/sol-wallet-adapter": "git://github.com/identity-com/sol-wallet-adapter#011b2acb88b3cd3d6b8debd10120d5a76b379b2a"
+        "@project-serum/sol-wallet-adapter": "https://github.com/identity-com/sol-wallet-adapter#011b2acb88b3cd3d6b8debd10120d5a76b379b2a"
     },
     "devDependencies": {
         "@identity.com/wallet-adapter-base": "^0.6.0",
