@@ -1,4 +1,4 @@
-import { SolletWalletAdapter, SolletWalletAdapterConfig } from '@solana/wallet-adapter-sollet';
+import { SolletWalletAdapter, SolletWalletAdapterConfig } from '@identity.com/wallet-adapter-sollet';
 import { Wallet, WalletName } from './types';
 
 export const getSolletExtensionWallet = ({ provider, ...config }: SolletWalletAdapterConfig = {}): Wallet => ({
